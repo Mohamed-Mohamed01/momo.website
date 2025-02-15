@@ -1,0 +1,519 @@
+/* style.css (Updated with new ideas: gradient background, sticky navbar, bigger CTAs, spacing, etc.) */
+
+/* =============== Imports & Global Styles =============== */
+@import url('https://fonts.googleapis.com/css2?fam...');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding-top: 80px;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 6rem 9% 6rem;
+}
+
+/* =============== Sticky / Animated Header =============== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 8%;
+  background-color: rgba(10, 10, 10, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background-color 0.3s ease-in-out;
+  height: 80px;
+}
+
+/* Change header color on scroll */
+header.sticky {
+  background-color: rgba(10, 10, 10, 0.8);
+}
+
+.logo {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo .rest-of-logo {
+  color: #ffffff;
+}
+
+.first-letter {
+  color: #a200ff;
+  font-size: 4.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo:hover .first-letter {
+  color: #00d4ff;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+nav a {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+/* Highlight active section link */
+nav a.active,
+nav a:hover {
+  color: #00d4ff;
+  border-bottom: 2px solid #00d4ff;
+  font-weight: bold;
+}
+
+/* =============== Typographic Contrast =============== */
+h1,
+h2,
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #a200ff;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(162, 0, 255, 0.6);
+}
+
+/* =============== Home Section =============== */
+/* Subtle gradient background on hero */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(25, 25, 25, 1) 100%
+  );
+}
+
+.home .home-content {
+  flex: 1;
+}
+
+.home .home-content h1.arabic-text {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  background: linear-gradient(90deg, #a200ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.home .home-content h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.home .home-content p {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Profile image area */
+.home-img {
+  flex: 0.8;
+  max-width: 500px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.home-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.home-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Social icons spacing */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 2px solid #a200ff;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 2rem 1.5rem 2rem 0;
+  padding-top: 1rem;
+  transition: 0.3s ease;
+  color: #a200ff;
+}
+
+.social-icons a:hover {
+  background-color: #00d4ff;
+  color: black;
+  box-shadow: 0 0 15px #00d4ff;
+  transform: scale(1.3);
+}
+
+/* CTAs */
+.btn {
+  display: inline-block;
+  padding: 1.4rem 3.4rem;
+  background-color: #0a0a0a;
+  border-radius: 4rem;
+  font-size: 1.8rem;
+  color: #a200ff;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  border: 2px solid #a200ff;
+  transition: 0.3s ease, background-color 0.3s;
+  cursor: pointer;
+  margin-right: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn:hover {
+  background-color: #00d4ff;
+  color: black;
+  box-shadow: 0 0 20px #00d4ff;
+  transform: scale(1.05);
+}
+
+.primary-cta i {
+  margin-right: 0.8rem;
+}
+
+/* Typewriter effect container */
+.typing-text {
+  font-size: 3.4rem;
+  font-weight: 600;
+  min-width: 280px;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.typing-text .typewriter::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 3rem;
+  background: #b74b4b;
+  margin-left: 5px;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Quote */
+.quote {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #a0a0a0;
+  text-align: left;
+  margin-top: 2rem;
+  max-width: 600px;
+  border-left: 3px solid #a200ff;
+  padding-left: 1.5rem;
+}
+
+.quote span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #b0b0b0;
+}
+
+/* =============== About Me Section =============== */
+.about-me {
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a2e, #0a0a0a);
+}
+
+.about-me h2 {
+  font-size: 3.5rem;
+  color: #ffd700;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.about-me-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.about-text ul {
+  list-style: disc;
+  margin-left: 2rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.testimonial {
+  max-width: 500px;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  backdrop-filter: blur(5px);
+  margin: auto;
+}
+
+.testimonial p {
+  font-size: 1.7rem;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial span {
+  display: block;
+  font-size: 1.5rem;
+  text-align: right;
+  color: #c0c0c0;
+}
+
+/* =============== Flying Section =============== */
+.flying {
+  text-align: center;
+  padding: 80px 10%;
+  background: linear-gradient(180deg, #0a0a0a, #1a1a2e);
+  color: white;
+  background-image: url('cockpit.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.flying h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffd700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.flying p {
+  font-size: 1.8rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.flying h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+}
+
+.flying-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 15px;
+}
+
+.flying-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.flying-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #a200ff;
+}
+
+/* =============== Responsive Adjustments =============== */
+@media (max-width: 995px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  nav a {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 15px;
+    display: block;
+  }
+  nav a:hover,
+  nav a.active {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid #b74b4b;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 10rem;
+  }
+  .home-content h3 {
+    font-size: 2.8rem;
+  }
+  .home-content p {
+    font-size: 1.6rem;
+  }
+  .home-img {
+    max-width: 300px;
+    margin: auto;
+  }
+  .btn {
+    margin-right: 0;
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Hide the hamburger by default */
+.menu-toggle {
+    display: none;
+  }
+  
+  /* For small screens */
+  @media (max-width: 995px) {
+    /* Show hamburger icon */
+    .menu-toggle {
+      display: block;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    /* Hide nav links by default */
+    #navbar {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(10, 10, 10, 0.9);
+      position: absolute;
+      top: 80px; /* below header */
+      right: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    /* Show nav links when active */
+    #navbar.active {
+      display: flex;
+    }
+  }
+  
+
+
+

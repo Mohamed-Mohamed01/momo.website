@@ -1,0 +1,104 @@
+<!-- index.html (Updated with suggested improvements) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>Momo Website</title>
+</head>
+
+<body>
+  <!-- Sticky / Animated Header -->
+  <header id="main-header">
+    <h1 class="logo">
+      <span class="first-letter">M</span><span class="rest-of-logo">omo.</span>
+    </h1>
+    <!-- Hamburger icon for small screens -->
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#flying">Aviation</a>
+      <a href="./education.html">Education</a>
+      <a href="#about-me">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero / Home Section with Subtle Gradient Background -->
+  <section id="home" class="home">
+    <div class="home-img">
+      <img src="images/main.jpeg" alt="Profile Image" />
+    </div>
+    <div class="home-content">
+      <h1 class="arabic-text">مرحباً أنا محمد</h1>
+      <h3 class="typing-text">I'm a <span class="typewriter"></span></h3>
+      <p>
+        Welcome, I'm a <span class="highlight">coder</span> and 
+        <span class="highlight">aviation</span> enthusiast who loves working on code 
+        and watching planes. This site is my living resume, showcasing projects, 
+        ideas, and lessons learned. Take a look around and let's connect!
+      </p>
+      <div class="quote">
+        <q>A good programmer is someone who always looks both ways before crossing
+        a one-way street.</q>
+        <span>~ Doug Linder</span>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- Larger CTA Button -->
+      <a href="#" class="btn primary-cta">
+        <i class="fas fa-user-circle"></i> Get to know me!
+      </a>
+
+      <!-- Second CTA for Projects or Portfolio -->
+      <a href="#" class="btn secondary-cta">Check out my Portfolio</a>
+    </div>
+  </section>
+
+
+  <!-- Flying Section -->
+  <section id="flying" class="flying">
+    <h2>My Passion for Flying</h2>
+    <p>
+      There's something about being in the sky, that feels different, 
+      being free, limitless, and full of opportunities. Whether it's the 
+      roar of the engines when taking off or the unimaginable views of the 
+      sunset, there's just something magical about being in the air. Others 
+      have loved ones or friends that make them feel special, but for me it's 
+      pushing the throttle and forgetting about all my problems.
+    </p>
+
+    <h3>Some of My Favorite Shots:</h3>
+    <div class="flying-gallery">
+      <img src="plane1.jpeg" alt="Emirates Triple 7 lining up to take off" />
+      <img src="plane2.jpeg" alt="FedEx Cargo in the fog" />
+      <img src="plane3.jpeg" alt="Asiana A350 taking off" />
+      <img src="plane4.jpeg" alt="Alaska 737-9 Max taxiing" />
+      <img src="plane5.jpeg" alt="Qatar Triple 7 in the sunset" />
+      <img src="plane6.jpeg" alt="Finnair A330 taxiing" />
+    </div>
+  </section>
+
+
+  <!-- Script for typewriter effect & sticky navbar -->
+  <script src="script.js"></script>
+
+
+
+</body>
+</html>
